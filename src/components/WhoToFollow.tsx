@@ -1,5 +1,5 @@
-import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 import React from "react";
+import { CheckBadgeIcon } from "@heroicons/react/24/solid";
 
 type Props = {};
 
