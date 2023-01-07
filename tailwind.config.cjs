@@ -4,6 +4,7 @@ module.exports = {
         "./index.html",
         "./src/**/*.{js,jsx,ts,tsx}",
         "./src/components/**/*.{js,jsx,ts,tsx}",
+        "./node_modules/react-tailwindcss-datepicker/dist/index.esm.js",
     ],
     theme: {
         extend: {
@@ -12,5 +13,8 @@ module.exports = {
             },
         },
     },
-    plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
+    plugins: [
+        require("tailwind-scrollbar")({ nocompatible: true }),
+        require("tailwind-scrollbar-hide"),
+    ],
 };
