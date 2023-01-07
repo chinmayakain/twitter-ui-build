@@ -11,19 +11,21 @@ import {
     EllipsisHorizontalIcon,
 } from "@heroicons/react/24/outline";
 
-import SidebarRow from "./SidebarRow";
+import { SidebarRow } from "../components";
 
 type Props = {};
 
 const Sidebar = (props: Props) => {
     return (
-        <div className="flex h-screen flex-col bg-fixed items-center justify-between px-4 md:items-start col-span-2">
+        <div className="flex h-screen static md:fixed flex-col bg-fixed items-center justify-between px-4 md:items-start col-span-2">
             <div>
-                <img
-                    src="/assets/icons/twitter-240.svg"
-                    alt="twitter-logo"
-                    className="h-10 w-10 m-3"
-                />
+                <a href={"/"}>
+                    <img
+                        src="/assets/icons/twitter-240.svg"
+                        alt="twitter-logo"
+                        className="h-14 w-14 m-3 hover:bg-blue-100 p-2 cursor-pointer hover:rounded-full"
+                    />
+                </a>
                 <SidebarRow title="Home" Icon={HomeIcon} />
                 <SidebarRow title="Explore" Icon={HashtagIcon} />
                 <SidebarRow title="Notifications" Icon={BellIcon} />
@@ -52,7 +54,7 @@ const Sidebar = (props: Props) => {
                         </h4>
                     </div>
                 </div>
-                <EllipsisHorizontalIcon className="h-5 w-5 ml-16 hidden md:hidden lg:inline" />
+                <EllipsisHorizontalIcon className="h-5 w-5 ml-16 hidden md:hidden lg:inline cursor-pointer hover:bg-gray-300 hover:rounded-full" />
             </div>
         </div>
     );

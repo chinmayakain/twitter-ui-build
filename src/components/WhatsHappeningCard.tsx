@@ -6,18 +6,18 @@ type Props = {};
 const WhatsHappeningCard = (props: Props) => {
     const whatsHappeningData = [
         {
-            category: "Trending",
-            tweet: "Node",
+            category: "Trending in Bangalore",
+            tweet: "Snow Fall In Bangalore",
             tweetNumbers: "24.8k Tweets",
         },
         {
-            category: "Information Technology . Trending",
-            tweet: "Figma",
+            category: "Information Technology · Trending",
+            tweet: "Node.js",
             tweetNumbers: "47k Tweets",
         },
         {
-            category: "Trending in India",
-            tweet: "Air India",
+            category: "Trending in Karnataka",
+            tweet: "Onions Going Crazy!",
             tweetNumbers: "20k Tweets",
         },
         {
@@ -26,6 +26,7 @@ const WhatsHappeningCard = (props: Props) => {
             tweetNumbers: "201k Tweets",
         },
     ];
+
     return (
         <div className="mt-8 rounded-2xl bg-gray-100 h-[455px]">
             <div className="pb-3 pt-3">
