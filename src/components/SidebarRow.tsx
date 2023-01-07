@@ -7,7 +7,7 @@ interface Props {
 
 const SidebarRow = ({ Icon, title }: Props) => {
     return (
-        <div className="flex group items-center space-x-2 px-4 py-3 rounded-ful cursor-pointer transition-all duration-200 max-w-fit">
+        <div className="flex group items-center my-1 space-x-2 px-4 py-3 rounded-ful cursor-pointer transition-all duration-200 max-w-fit hover:bg-slate-200 hover:rounded-full">
             <Icon className="h-6 w-6" />
             <p className="group-hover:text-twitterBlue hidden md:inline-flex text-base font-light lg:font-normal lg:text-xl">
                 {title}
