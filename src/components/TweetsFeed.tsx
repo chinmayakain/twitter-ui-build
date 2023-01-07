@@ -85,7 +85,7 @@ const TweetsFeed = ({ tweet, avatars }: Props) => {
         return (
             value.likes && (
                 <p className="mr-5 text-gray-600 hover:text-rose-600">
-                    {tweet.likes !== "0" ? tweet.likes : ""}
+                    {Number(value.likes) !== 0 ? Number(value.likes) : ""}
                 </p>
             )
         );
@@ -95,7 +95,7 @@ const TweetsFeed = ({ tweet, avatars }: Props) => {
         return (
             value.retweets && (
                 <p className="mr-10 text-gray-600 hover:text-green-600">
-                    {tweet.retweets !== "0" ? tweet.retweets : ""}
+                    {Number(value.retweets) !== 0 ? Number(value.retweets) : ""}
                 </p>
             )
         );
@@ -145,7 +145,7 @@ const TweetsFeed = ({ tweet, avatars }: Props) => {
                 <div className="flex space-x-2 cursor-pointer items-center">
                     <div
                         onClick={handleRetweet}
-                        className="flex h-9 w-9 p-2 cursor-pointer item-center space-x-3 text-gray-600 hover:bg-green-200 hover:text-green-600 hover:rounded-full"
+                        className="flex h-9 w-9 p-2 cursor-pointer item-center space-x-3 text-gray-600 hover:bg-green-200 hover:text-green-600 hover:rounded-full transition-all duration-300 ease-out active:scale-150"
                     >
                         {retweet ? (
                             <ArrowPathRoundedSquareIcon className="text-green-500 font-bold" />
@@ -161,7 +161,7 @@ const TweetsFeed = ({ tweet, avatars }: Props) => {
                 <div className="flex space-x-2 cursor-pointer items-center">
                     <div
                         onClick={handleLike}
-                        className="flex h-9 w-9 p-2 cursor-pointer item-center space-x-3 text-gray-600 hover:bg-rose-300 hover:text-rose-600 hover:rounded-full"
+                        className="flex h-9 w-9 p-2 cursor-pointer item-center space-x-3 text-gray-600 hover:text-rose-600 transition-all duration-200 ease-out hover:bg-rose-200 hover:rounded-full active:scale-150"
                     >
                         {like ? (
                             <HeartIconFilled className="text-rose-500" />
