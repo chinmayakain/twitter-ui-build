@@ -46,11 +46,9 @@ const Sidebar = (props: Props) => {
                         alt="avatar"
                     />
                     <div className="hidden md:inline">
-                        <h4 className="font-bold cursor-pointer">
-                            Luke Dunnfy
-                        </h4>
+                        <h4 className="font-bold cursor-pointer">Tom Riddle</h4>
                         <h4 className="font-normal text-slate-400 cursor-pointer">
-                            @dunffyluke
+                            @heWhoCantBeNamed
                         </h4>
                     </div>
                 </div>

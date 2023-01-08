@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { DayRange } from "react-modern-calendar-datepicker";
 
 import { Sidebar, Feed, Widgets } from "./components";
 import { useDebounce } from "./hooks";
@@ -6,15 +7,31 @@ import { useDebounce } from "./hooks";
 function App() {
     const [tweets, setTweets] = useState([]);
     const [avatars, setAvatars] = useState("");
-    const [value, setValue] = useState({ startDate: null, endDate: null });
     const [loading, setLoading] = useState(false);
     const debouncedFetchTweets = useDebounce(fetchTweets, 2000);
     const debouncedAvatars = useDebounce(fetchAvatars, 2000);
+    const [dayRange, setDayRange] = useState<DayRange>({
+        from: null,
+        to: null,
+    });
+    const [dateReference, setDateReference] = useState<any>(null);
+    const [filteredDates, setFilteredDates] = useState(null);
 
     useEffect(() => {
         debouncedFetchTweets();
         debouncedAvatars();
     }, []);
+
+    useEffect(() => {
+        if (dateReference?.from && dateReference?.to) {
+            let newDates = filterDates(
+                dateReference.from,
+                dateReference.to,
+                tweets
+            );
+            setFilteredDates(newDates);
+        }
+    }, [dateReference]);
 
     async function fetchAvatars() {
         let imagesCount = 70;
@@ -51,10 +68,6 @@ function App() {
         }
     }
 
-    const handleValueChange = (newValue: any) => {
-        setValue(newValue);
-    };
-
     function formatUTCDate(date: any) {
         const dateString = date.toISOString();
         return dateString.slice(0, 10);
@@ -68,7 +81,25 @@ function App() {
         );
     };
 
-    let filteredDates: {} = filterDates(value.startDate, value.endDate, tweets);
+    const handleDateChange = (newValue: any) => {
+        setDayRange({ from: newValue.from, to: newValue.to });
+        let date = convertDates(newValue.from, newValue.to);
+        setDateReference(date);
+    };
+
+    function convertDates(fromDate: any, toDate: any) {
+        const from =
+            fromDate && `${fromDate?.year}-${fromDate?.month}-${fromDate?.day}`;
+        const to = toDate && `${toDate?.year}-${toDate?.month}-${toDate?.day}`;
+        if (from === to) {
+            return setDayRange({
+                from: null,
+                to: null,
+            });
+        }
+
+        return { from, to };
+    }
 
     return (
         <div className="lg:max-w-7xl mx-auto overflow-hidden">
@@ -78,7 +109,7 @@ function App() {
                 {/* feeds section */}
                 <Feed
                     tweets={
-                        value.startDate && value.startDate
+                        dateReference?.from && dateReference?.to
                             ? filteredDates
                             : tweets
                     }
@@ -87,9 +118,9 @@ function App() {
                 />
                 {/* widgets section */}
                 <Widgets
-                    setValue={setValue}
-                    value={value}
-                    handleValueChange={handleValueChange}
+                    setValue={setDayRange}
+                    value={dayRange}
+                    handleValueChange={handleDateChange}
                 />
             </main>
         </div>

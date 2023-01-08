@@ -1,16 +1,11 @@
 import React from "react";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import Datepicker from "react-tailwindcss-datepicker";
+import { Calendar } from "react-modern-calendar-datepicker";
 
 import { WhatsHappeningCard, WhoToFollow, InfoBox } from "../components";
 
 type Props = {
-    handleValueChange: (
-        value: {
-            startDate: string | Date | null;
-            endDate: string | Date | null;
-        } | null
-    ) => void;
+    handleValueChange: any;
     value: any;
     setValue: Function;
 };
@@ -23,15 +18,18 @@ const Widgets = (props: Props) => {
             {/* SearchBar section */}
             <div className="flex items-center p-3 rounded-full mt-2 space-x-2 bg-gray-100">
                 <MagnifyingGlassIcon className="h-5 w-5 text-gray-700" />
-                <Datepicker
-                    inputClassName="outline-none text-bold"
-                    primaryColor={"sky"}
+                <input
+                    placeholder="Search Twitter"
+                    className="bg-transparent text-gray-900 outline-none"
+                />
+            </div>
+            <div className="mt-4 ml-2">
+                <Calendar
                     value={value}
                     onChange={handleValueChange}
-                    showShortcuts={false}
-                    useRange={false}
-                    placeholder={"Search For Tweets"}
-                    startFrom={new Date()}
+                    colorPrimary="#2AA4F4"
+                    colorPrimaryLight="rgba(75, 207, 250, 0.4)"
+                    shouldHighlightWeekends
                 />
             </div>
 
