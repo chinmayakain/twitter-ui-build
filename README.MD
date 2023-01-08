@@ -56,7 +56,11 @@ To run this project, you will need to add the following environment variables to
 
 
 ## Deployment
-![vercelv](https://user-images.githubusercontent.com/52573685/211212699-0a9374d7-928f-4fe2-941f-da00796d125d.jpg)
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/52573685/211214885-de772e5a-7956-4f85-9fd6-5d3f8f0a3ef3.png" width="250">
+<p>
+
 
  <div align="center">
     <h1>
