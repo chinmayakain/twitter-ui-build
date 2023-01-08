@@ -52,7 +52,7 @@ const Sidebar = (props: Props) => {
                         </h4>
                     </div>
                 </div>
-                <EllipsisHorizontalIcon className="h-5 w-5 ml-16 hidden md:hidden lg:inline cursor-pointer hover:bg-gray-300 hover:rounded-full" />
+                <EllipsisHorizontalIcon className="h-5 w-5 ml-5 hidden md:hidden lg:inline cursor-pointer hover:bg-gray-300 hover:rounded-full" />
             </div>
         </div>
     );
