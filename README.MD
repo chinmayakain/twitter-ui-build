@@ -58,5 +58,10 @@ To run this project, you will need to add the following environment variables to
 ## Deployment
 ![vercelv](https://user-images.githubusercontent.com/52573685/211212699-0a9374d7-928f-4fe2-941f-da00796d125d.jpg)
 
- 
- ### Deployed on Vercel
+ <div align="center">
+    <h1>
+        <a href="https://vercel.com/">
+            Deployed on Vercel
+        </a>
+    </h1>
+</div>
