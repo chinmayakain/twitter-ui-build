@@ -20,10 +20,15 @@ const Feed = (props: Props) => {
     function renderTweetCards(): React.ReactNode {
         if (isEmpty(tweets)) {
             return (
-                <div className="flex flex-col space-x-3 p-5 border-b">
-                    <p className="pt-1 px-2 m-0 flex h-[50vh] text-slate-600 font-semibold justify-center items-center cursor-pointer">
+                <div className="flex flex-col space-x-3 items-center p-5 border-b justify-center h-[50vh]">
+                    <p className="pt-1 px-2 m-0 flex  text-slate-600 font-semibold justify-center items-center cursor-pointer">
                         No Tweets Found!
                     </p>
+                    <a href={"/"}>
+                        <button className="bg-twitterBlue justify-center mb-6 mt-11 rounded-full font-bold text-white lg:inline md:w-32 h-12 w-24">
+                            Refresh
+                        </button>
+                    </a>
                 </div>
             );
         }
