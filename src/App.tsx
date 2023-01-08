@@ -55,7 +55,7 @@ function App() {
     }
 
     async function fetchTweets() {
-        let url = "http://www.mocky.io/v2/5d1ef97d310000552febe99d";
+        let url = "https://www.mocky.io/v2/5d1ef97d310000552febe99d";
 
         try {
             setLoading(true);
