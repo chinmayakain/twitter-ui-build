@@ -14,7 +14,7 @@
 
 ## Screenshots
 
-![twitter ui](https://user-images.githubusercontent.com/52573685/211212574-a86b48c6-9dba-4e53-ace4-a2dc1b996e3a.PNG)
+<kbd> ![twitter ui](https://user-images.githubusercontent.com/52573685/211212574-a86b48c6-9dba-4e53-ace4-a2dc1b996e3a.PNG) </kbd>
 
 
 ## Run Locally
